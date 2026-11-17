@@ -74,6 +74,35 @@
   footer .wrap { display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; }
   footer a { text-decoration:none; } footer a:hover { text-decoration:underline; color:var(--deep); }
   @media (max-width:560px){ .hero .wrap{padding:56px 20px 52px} }
+
+:root{--pearl:#f4faf6;--mist:#d6ecdf;--mist2:#b9dccb;--ink:#04201a;--muted:#294a3f;--line:#9fc9b6;--emerald:#08785a;--deep:#064634;}
+.sec-sub,.lead,.app p,.val p,.stat span{color:var(--muted)}
+.app,.val{border-width:1.5px;box-shadow:0 2px 0 rgba(6,70,52,.10),0 16px 36px rgba(6,70,52,.16)}
+.tag{background:var(--mist2)}
+.alt{border-top:1.5px solid var(--line)}
+
+/* A: Emerald waves - deep emerald hero with layered waves */
+.hero{background:linear-gradient(135deg,#064634 0%,#0a7a5a 60%,#12a77c 100%);position:relative}
+.hero h1{color:#fff} .hero h1 span{background:linear-gradient(90deg,#b9f5dc,#fff);-webkit-background-clip:text;background-clip:text}
+.hero .lead{color:#d9f4e8} .hero .eyebrow{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.3)}
+.hero .btn.primary{background:#fff;color:#064634;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.hero .stat b{color:#fff} .hero .stat span{color:#c4eadb}
+.hero .wrap{padding-bottom:130px;position:relative;z-index:2}
+.hero:before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:110px;background:
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 110' preserveAspectRatio='none'%3E%3Cpath fill='%23f4faf6' d='M0,60 C240,110 480,10 720,50 C960,90 1200,20 1440,60 L1440,110 L0,110Z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.45' d='M0,80 C300,30 600,110 900,70 C1100,45 1300,80 1440,70 L1440,110 L0,110Z'/%3E%3C/svg%3E") bottom/100% 100% no-repeat}
+header.nav{background:rgba(6,70,52,.92);border-bottom:0} .brand{color:#fff} .links a{color:#bfe9d8} .links a:hover{color:#fff}
+
+/* hero: three concentric rings (top right) + a smaller set (bottom left) */
+.hero:before{width:600px;height:600px;right:-190px;top:-250px;background:transparent;border-radius:50%;
+  box-shadow:0 0 0 64px rgba(255,255,255,.06),0 0 0 128px rgba(255,255,255,.045),0 0 0 192px rgba(255,255,255,.03)}
+.hero .wrap:before{content:"";position:absolute;left:-210px;bottom:-30px;width:240px;height:240px;border-radius:50%;
+  box-shadow:0 0 0 40px rgba(255,255,255,.05),0 0 0 80px rgba(255,255,255,.035);pointer-events:none}
+/* app cards: deeper layered shadows */
+.app{box-shadow:0 2px 3px rgba(6,70,52,.14),0 14px 28px rgba(6,70,52,.18),0 34px 60px rgba(6,70,52,.22)}
+.app:hover{transform:translateY(-6px);box-shadow:0 3px 4px rgba(6,70,52,.16),0 20px 36px rgba(6,70,52,.22),0 44px 74px rgba(6,70,52,.28)}
+.soon,.soon:hover{box-shadow:none}
+
 </style>
 </head>
 <body>
@@ -106,16 +135,6 @@
       <p class="sec-sub">Tap an app to see what it does, find the download link, and read its privacy policy.</p>
       <div class="apps">
 
-        <a class="app" href="https://snake-rtro.vizhai-nilam.co.in/" aria-label="Open the Snake-Rtro page">
-          <div class="art"><img src="images/snake-rtro-icon.svg" alt="Snake-Rtro app icon" width="104" height="104"></div>
-          <div class="body">
-            <span class="tag">Game · Android</span>
-            <h3>Snake-Rtro</h3>
-            <p>A retro pixel-LCD take on the classic Snake. Three speeds, obstacles, power-ups and three screen themes. Free, with no account.</p>
-            <div class="go">View the game <span>→</span></div>
-          </div>
-        </a>
-
         <a class="app" href="https://expenso.vizhai-nilam.co.in/" aria-label="Open the ExpensO page">
           <div class="art"><img src="images/expenso-icon.png" alt="ExpensO app icon" width="104" height="104"></div>
           <div class="body">
@@ -123,6 +142,17 @@
             <h3>ExpensO</h3>
             <p>The Expense Organiser: a private, offline-first money tracker for accounts, budgets and savings goals. No cloud account needed.</p>
             <div class="go">View the app <span>→</span></div>
+          </div>
+        </a>
+
+
+        <a class="app" href="https://snake-rtro.vizhai-nilam.co.in/" aria-label="Open the Snake-Rtro page">
+          <div class="art"><img src="images/snake-rtro-icon.svg" alt="Snake-Rtro app icon" width="104" height="104"></div>
+          <div class="body">
+            <span class="tag">Game · Android</span>
+            <h3>Snake-Rtro</h3>
+            <p>A retro pixel-LCD take on the classic Snake. Three speeds, obstacles, power-ups and three screen themes. Free, with no account.</p>
+            <div class="go">View the game <span>→</span></div>
           </div>
         </a>
 
