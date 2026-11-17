@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vizhai Nilam — Apps</title>
+<meta name="description" content="Apps and games by Vizhai Nilam.">
+<style>
+  :root { --bg:#f6f8fa; --ink:#1b2330; --muted:#5b6778; --card:#ffffff; --line:#d9dee5; --accent:#2e6b4f; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12171d; --ink:#e8edf2; --muted:#9aa6b4; --card:#1a212a; --line:#2b3440; --accent:#7fd3a6; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+  .wrap { max-width:720px; margin:0 auto; padding:40px 20px 32px; }
+  h1 { margin:0; font-size:2em; }
+  .sub { color:var(--muted); margin:6px 0 28px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; color:inherit; text-decoration:none; }
+  .card:hover { border-color:var(--accent); }
+  .card b { display:block; font-size:1.1em; margin-bottom:4px; }
+  .card span { color:var(--muted); font-size:.95em; }
+  .card em { display:inline-block; margin-top:10px; color:var(--accent); font-style:normal; font-weight:600; }
+  footer { margin-top:36px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:.85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Vizhai Nilam</h1>
+  <p class="sub">Independent developer of mobile apps and games.</p>
+
+  <div class="grid">
+    <a class="card" href="https://snake-rtro.vizhai-nilam.co.in/">
+      <b>Snake-Rtro</b>
+      <span>Classic retro-style Snake game for Android, with an LCD look and no sign-in.</span>
+      <em>Game page &amp; privacy policy →</em>
+    </a>
+    <a class="card" href="https://expenso.vizhai-nilam.co.in/">
+      <b>Expenso</b>
+      <span>Expense tracking app.</span>
+      <em>App page →</em>
+    </a>
+  </div>
+
+  <footer>© Vizhai Nilam. Google Play and the Google Play logo are trademarks of Google LLC.</footer>
+</div>
+</body>
+</html>
