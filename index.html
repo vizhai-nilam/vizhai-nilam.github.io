@@ -4,73 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vizhai Nilam — Independent app developer</title>
-<meta name="description" content="Vizhai Nilam builds focused, privacy-friendly mobile apps and games. Explore Snake-Rtro, Expenso and more.">
+<meta name="description" content="Vizhai Nilam builds focused, privacy-friendly mobile apps and games. Explore Snake-Rtro, ExpensO and more.">
+<meta name="color-scheme" content="light">
 <style>
   :root {
-    --bg:#f5f7fb; --bg2:#eaf0f8; --ink:#0f1722; --muted:#566275; --card:#ffffff; --line:#dbe2ec;
-    --accent:#1f7a5a; --accent2:#2563eb; --glow:rgba(37,99,235,.14);
-    --shadow:0 1px 2px rgba(15,23,34,.06), 0 12px 32px rgba(15,23,34,.08);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg:#0b1118; --bg2:#101a26; --ink:#eaf0f7; --muted:#97a5b8; --card:#121c28; --line:#223042;
-      --accent:#5fd3a4; --accent2:#7aa8ff; --glow:rgba(122,168,255,.16);
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px rgba(0,0,0,.35);
-    }
+    --pearl:#f8fbf9; --mist:#e3f1ea; --mist2:#d3e8de;
+    --ink:#10302a; --muted:#4d6a61; --line:#cfe3d9; --card:#ffffff;
+    --emerald:#0e8a64; --deep:#0a5c45; --glow:rgba(14,138,100,.16);
+    --shadow:0 1px 2px rgba(10,92,69,.06), 0 14px 34px rgba(10,92,69,.10);
   }
   * { box-sizing:border-box; }
   html { scroll-behavior:smooth; }
-  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--pearl); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
   a { color:inherit; }
   .wrap { max-width:1040px; margin:0 auto; padding:0 20px; }
 
   /* nav */
-  header.nav { position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.4) blur(12px); background:color-mix(in srgb, var(--bg) 82%, transparent); border-bottom:1px solid var(--line); }
+  header.nav { position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.3) blur(12px); background:rgba(248,251,249,.85); border-bottom:1px solid var(--line); }
   .nav .wrap { display:flex; align-items:center; justify-content:space-between; height:60px; }
-  .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; text-decoration:none; }
-  .logo { width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:grid; place-items:center; color:#fff; font-weight:800; font-size:15px; }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; text-decoration:none; color:var(--deep); }
+  .logo { width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--emerald),var(--deep)); display:grid; place-items:center; color:#fff; font-weight:800; font-size:15px; }
   .links a { text-decoration:none; color:var(--muted); font-weight:600; margin-left:22px; font-size:.95em; }
-  .links a:hover { color:var(--ink); }
+  .links a:hover { color:var(--deep); }
 
   /* hero */
-  .hero { position:relative; overflow:hidden; background:radial-gradient(900px 400px at 85% -10%, var(--glow), transparent 60%), radial-gradient(700px 360px at 0% 10%, rgba(31,122,90,.12), transparent 60%), var(--bg); }
+  .hero { position:relative; overflow:hidden; background:radial-gradient(800px 380px at 90% -10%, var(--mist2), transparent 62%), radial-gradient(640px 320px at 0% 0%, var(--mist), transparent 60%), var(--pearl); }
   .hero .wrap { padding:84px 20px 76px; }
-  .eyebrow { display:inline-block; font-size:.8em; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent); background:color-mix(in srgb, var(--accent) 12%, transparent); padding:5px 12px; border-radius:999px; }
-  h1 { font-size:clamp(2.2rem,6vw,3.8rem); line-height:1.08; margin:18px 0 16px; letter-spacing:-1px; max-width:16ch; }
-  h1 span { background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .eyebrow { display:inline-block; font-size:.8em; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:var(--deep); background:var(--mist); border:1px solid var(--line); padding:5px 12px; border-radius:999px; }
+  h1 { font-size:clamp(2.2rem,6vw,3.8rem); line-height:1.08; margin:18px 0 16px; letter-spacing:-1px; max-width:16ch; color:var(--ink); }
+  h1 span { background:linear-gradient(90deg,var(--emerald),var(--deep)); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .lead { font-size:1.15rem; color:var(--muted); max-width:56ch; margin:0 0 30px; }
-  .cta { display:flex; flex-wrap:wrap; gap:12px; }
-  .btn { display:inline-block; padding:13px 24px; border-radius:12px; font-weight:700; text-decoration:none; transition:transform .15s, box-shadow .15s; }
-  .btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; box-shadow:0 8px 22px var(--glow); }
-  .btn.ghost { border:1.5px solid var(--line); background:var(--card); }
+  .btn { display:inline-block; padding:13px 26px; border-radius:12px; font-weight:700; text-decoration:none; transition:transform .15s, box-shadow .15s; }
+  .btn.primary { background:linear-gradient(135deg,var(--emerald),var(--deep)); color:#fff; box-shadow:0 8px 22px var(--glow); }
   .btn:hover { transform:translateY(-2px); }
   .stats { display:flex; flex-wrap:wrap; gap:34px; margin-top:44px; }
-  .stat b { display:block; font-size:1.6rem; letter-spacing:-.5px; }
+  .stat b { display:block; font-size:1.6rem; letter-spacing:-.5px; color:var(--deep); }
   .stat span { color:var(--muted); font-size:.9em; }
 
   section { padding:72px 0; }
-  .alt { background:var(--bg2); }
-  h2 { font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.5px; margin:0 0 8px; }
+  .alt { background:var(--mist); border-top:1px solid var(--line); }
+  h2 { font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.5px; margin:0 0 8px; color:var(--ink); }
   .sec-sub { color:var(--muted); margin:0 0 34px; max-width:60ch; }
 
   /* app cards */
   .apps { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; }
   .app { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; text-decoration:none; box-shadow:var(--shadow); transition:transform .2s, border-color .2s; }
-  .app:hover { transform:translateY(-5px); border-color:var(--accent2); }
-  .art { height:230px; display:grid; place-items:center; position:relative; overflow:hidden; }
-  .art.snake { background:linear-gradient(160deg,#c7d6b0,#9fb287); align-items:start; }
-  .art.snake img { height:250px; width:auto; margin-top:50px; border-radius:20px 20px 0 0; border:3px solid #26331e; border-bottom:0; box-shadow:0 14px 30px rgba(0,0,0,.28); }
-  .art.expenso { background:linear-gradient(160deg,#0f766e,#2563eb); }
-  .art.expenso .bars { display:flex; align-items:flex-end; gap:12px; height:120px; }
-  .art.expenso .bars i { width:26px; border-radius:7px 7px 3px 3px; background:rgba(255,255,255,.9); display:block; }
-  .art.expenso .bars i:nth-child(1){height:44%} .art.expenso .bars i:nth-child(2){height:70%} .art.expenso .bars i:nth-child(3){height:55%} .art.expenso .bars i:nth-child(4){height:100%} .art.expenso .bars i:nth-child(5){height:80%}
+  .app:hover { transform:translateY(-5px); border-color:var(--emerald); }
+  .art { height:170px; display:grid; place-items:center; background:linear-gradient(160deg,var(--mist) 0%, var(--pearl) 100%); border-bottom:1px solid var(--line); }
+  .art img { width:104px; height:104px; border-radius:24px; box-shadow:0 10px 24px rgba(10,92,69,.22); display:block; }
   .body { padding:22px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1; }
-  .tag { align-self:flex-start; font-size:.72em; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--accent); background:color-mix(in srgb, var(--accent) 12%, transparent); padding:3px 10px; border-radius:999px; }
+  .tag { align-self:flex-start; font-size:.72em; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--deep); background:var(--mist); padding:3px 10px; border-radius:999px; }
   .app h3 { margin:2px 0 0; font-size:1.35rem; letter-spacing:-.3px; }
   .app p { margin:0; color:var(--muted); }
-  .go { margin-top:auto; padding-top:10px; font-weight:700; color:var(--accent2); }
-  .app:hover .go span { margin-left:6px; }
+  .go { margin-top:auto; padding-top:10px; font-weight:700; color:var(--emerald); }
   .go span { transition:margin .2s; }
+  .app:hover .go span { margin-left:6px; }
   .soon { border-style:dashed; box-shadow:none; background:transparent; align-items:center; justify-content:center; text-align:center; padding:40px 24px; color:var(--muted); min-height:200px; }
   .soon:hover { transform:none; border-color:var(--line); }
   .soon b { color:var(--ink); font-size:1.1rem; }
@@ -78,18 +66,14 @@
   /* values */
   .vals { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
   .val { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; }
-  .ico { width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:color-mix(in srgb, var(--accent2) 14%, transparent); margin-bottom:12px; }
+  .ico { width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:20px; background:var(--mist); margin-bottom:12px; }
   .val b { display:block; margin-bottom:4px; font-size:1.05rem; }
   .val p { margin:0; color:var(--muted); font-size:.95em; }
 
-  /* contact */
-  .contact { text-align:center; }
-  .contact .box { background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card)),color-mix(in srgb,var(--accent2) 14%,var(--card))); border:1px solid var(--line); border-radius:24px; padding:48px 24px; }
-  .contact p { color:var(--muted); max-width:52ch; margin:8px auto 22px; }
-  footer { padding:26px 0 40px; color:var(--muted); font-size:.88em; border-top:1px solid var(--line); }
+  footer { padding:26px 0 40px; color:var(--muted); font-size:.88em; border-top:1px solid var(--line); background:var(--pearl); }
   footer .wrap { display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; }
-  footer a { text-decoration:none; } footer a:hover { text-decoration:underline; }
-  @media (max-width:560px){ .links a:not(:last-child){display:none} .hero .wrap{padding:56px 20px 52px} }
+  footer a { text-decoration:none; } footer a:hover { text-decoration:underline; color:var(--deep); }
+  @media (max-width:560px){ .hero .wrap{padding:56px 20px 52px} }
 </style>
 </head>
 <body>
@@ -97,7 +81,7 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top"><span class="logo">V</span> Vizhai Nilam</a>
-    <nav class="links"><a href="#apps">Apps</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <nav class="links"><a href="#apps">Apps</a><a href="#about">About</a></nav>
   </div>
 </header>
 
@@ -107,13 +91,10 @@
       <span class="eyebrow">Independent app developer</span>
       <h1>Small apps, <span>built with care.</span></h1>
       <p class="lead">I design and build focused mobile apps and games: simple to use, quick to start, and respectful of your privacy. No sign-ups, no clutter.</p>
-      <div class="cta">
-        <a class="btn primary" href="#apps">Explore my apps</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-      </div>
+      <a class="btn primary" href="#apps">Explore my apps</a>
       <div class="stats">
         <div class="stat"><b>2</b><span>apps and counting</span></div>
-        <div class="stat"><b>0</b><span>accounts required</span></div>
+        <div class="stat"><b>On-device</b><span>your data stays with you</span></div>
         <div class="stat"><b>100%</b><span>independent</span></div>
       </div>
     </div>
@@ -126,7 +107,7 @@
       <div class="apps">
 
         <a class="app" href="https://snake-rtro.vizhai-nilam.co.in/" aria-label="Open the Snake-Rtro page">
-          <div class="art snake"><img src="images/gameplay-classic.webp" alt="Snake-Rtro gameplay screenshot" loading="lazy" width="941" height="2000"></div>
+          <div class="art"><img src="images/snake-rtro-icon.svg" alt="Snake-Rtro app icon" width="104" height="104"></div>
           <div class="body">
             <span class="tag">Game · Android</span>
             <h3>Snake-Rtro</h3>
@@ -135,12 +116,12 @@
           </div>
         </a>
 
-        <a class="app" href="https://expenso.vizhai-nilam.co.in/" aria-label="Open the Expenso page">
-          <div class="art expenso"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <a class="app" href="https://expenso.vizhai-nilam.co.in/" aria-label="Open the ExpensO page">
+          <div class="art"><img src="images/expenso-icon.png" alt="ExpensO app icon" width="104" height="104"></div>
           <div class="body">
-            <span class="tag">Utility</span>
-            <h3>Expenso</h3>
-            <p>Keep track of everyday spending in a clean, simple app.</p>
+            <span class="tag">Finance · Android</span>
+            <h3>ExpensO</h3>
+            <p>The Expense Organiser: a private, offline-first money tracker for accounts, budgets and savings goals. No cloud account needed.</p>
             <div class="go">View the app <span>→</span></div>
           </div>
         </a>
@@ -162,16 +143,6 @@
         <div class="val"><div class="ico">⚡</div><b>Fast and light</b><p>Quick to open, small to install, and easy on your battery.</p></div>
         <div class="val"><div class="ico">🎯</div><b>Focused design</b><p>Each app does one thing well, with no clutter or confusing menus.</p></div>
         <div class="val"><div class="ico">🤝</div><b>Open to feedback</b><p>Suggestions and bug reports shape every update.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <div class="box">
-        <h2>Say hello</h2>
-        <p>Questions, feedback, or ideas for the next app? Reach out through GitHub, or use the contact details on each app's Google Play page.</p>
-        <a class="btn primary" href="https://github.com/vizhai-nilam">Visit my GitHub</a>
       </div>
     </div>
   </section>
